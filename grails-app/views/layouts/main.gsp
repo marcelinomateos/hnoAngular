@@ -20,7 +20,7 @@
     <body layout="column">
     <md-toolbar ng-controller="MainController" layout="row">
       <div class="md-toolbar-tools">
-        <md-button ng-click="toggleSidenav('left')" hide-sm class="md-icon-button">
+        <md-button ng-click="toggleSidenav('left')" hide-gt-sm class="md-icon-button">
           <md-icon aria-label="Menu" md-svg-icon="${resource(dir: 'images/icons', file: 'menu.svg')}"></md-icon>
         </md-button>
         <h1>S. E. C. A. H. (V4)</h1>
@@ -30,7 +30,7 @@
 
     
      <div layout="row" flex>
-        <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('sm')">
+        <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
           
         </md-sidenav>
         <div layout="column" flex id="content">

@@ -5,8 +5,7 @@
         
         <script src="${resource(dir: 'js/iconosJs', file: 'app.js')}"></script>
         
-        <link rel="stylesheet" type="text/css" href="${resource(dir: 'css', file: 'angular-material.css')}">
-        <link rel="stylesheet" type="text/css" href="${resource(dir: 'css', file: 'principal.css')}">
+
         
     </head>
     <body>
