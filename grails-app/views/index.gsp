@@ -3,17 +3,9 @@
 <html>
     <head>
         <title>S.E.C.A.H.</title>
-        <meta name="layout" content="main"/>
-        
-        
+        <meta name="layout" content="main"/>     
     </head>
     <body>
-        
-
-
-
-
-        
-        
+        <H1>PRINCIPAL</H1>
     </body>
 </html>
