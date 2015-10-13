@@ -3,8 +3,8 @@
 <html lang="es" ng-app="StarterApp">
     <head>
         <script src="${resource(dir: 'js', file: 'angular.js')}"></script>
-        <script src="${resource(dir: 'js', file: 'principalApp.js')}"></script>
-        <script src="${resource(dir: 'js', file: 'principal.js')}"></script>
+        <script src="${resource(dir: 'js', file: 'main.js')}"></script>
+       
 
 	<link rel="stylesheet" type="text/css" href="${resource(dir: 'css', file: 'angular-material.css')}">
         <link rel="stylesheet" type="text/css" href="${resource(dir: 'css', file: 'principal.css')}">
