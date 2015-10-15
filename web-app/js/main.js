@@ -11,4 +11,5 @@ angular.module('StarterApp', ['ngMaterial'])
     $mdSidenav(menuId).toggle();
   };
 }]);
+    
 

@@ -6,86 +6,33 @@
         <meta name="layout" content="mainMenu"/>
         <script src="${resource(dir: 'js', file: 'principalApp.js')}"></script>
     </head>
-    <body ng-controller="principalCtrl" >
-        <div layout="row">
+    <body >
+        <div layout="row" ng-controller="principalCtrl1" >
             <!-- Barra lateral -->
             
             <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
+                <p class="md-title">Ocupación hospitalaria</p>
+                <md-divider></md-divider>       
+                <md-subheader>Camas no censables</md-subheader>
+                <md-content>    
                 <md-list>
-                    <p class="md-title">Ocupación hospitalaria</p>
-                    <md-divider></md-divider>       
-                    <md-subheader>Camas no censables</md-subheader>
-                    <md-list-item class="md-2-line" ng-click="cambiarArea()">
+                    <md-list-item class="md-2-line"  ng-repeat="areaNc in areaNoCensables" ng-click="cambiarArea(areaNc.areaId)">
                         <div class="md-list-item-text" layout="column">
-                            <h4>Urgencias (6/12)</h4>
-                            <md-progress-linear md-mode="determinate"  value="50"></md-progress-linear>
+                            <h4>{{ areaNc.area }} ({{ areaNc.ocupadas }}/{{ areaNc.camas }}) </h4>
+                            <md-progress-linear md-mode="determinate"  value="{{(areaNc.ocupadas / areaNc.camas)*100}}"></md-progress-linear>
                         </div>
                     </md-list-item>
-                    <md-list-item class="md-2-line" ng-click="cambiarArea()">   
+                </md-list>   
+                </md-content>    
+                <md-divider></md-divider>
+                <md-list>
+                    <md-list-item class="md-2-line" ng-click="cambiarArea()" ng-repeat="areaC in areaCensables" ng-click="cambiarArea(areaC.areaId)">
                         <div class="md-list-item-text" layout="column">
-                            <h4>U.C.I.P (6/12)</h4>
-                            <md-progress-linear md-mode="determinate"  value="50"></md-progress-linear>
+                            <h4>{{ areaC.area }} ({{ areaC.ocupadas }}/{{ areaC.camas }}) </h4>
+                            <md-progress-linear md-mode="determinate"  value="{{(areaC.ocupadas / areaC.camas)*100}}"></md-progress-linear>
                         </div>
                     </md-list-item>
-                    <md-list-item class="md-2-line" ng-click="cambiarArea()">   
-                        <div class="md-list-item-text" layout="column">
-                            <h4>U.C.I.N. (6/12)</h4>
-                            <md-progress-linear md-mode="determinate" value="50"></md-progress-linear>
-                        </div>
-                    </md-list-item>
-                    <md-divider></md-divider>
-                    <md-subheader>Camas censables</md-subheader>
-                    <md-list-item class="md-2-line" ng-click="cambiarArea()">
-                        <div class="md-list-item-text" layout="column">
-                            <h4>U.C.I.N. (Intermedia) (6/12)</h4>
-                            <md-progress-linear md-mode="determinate"  value="50"></md-progress-linear>
-                        </div>
-                    </md-list-item>
-                    <md-list-item class="md-2-line" ng-click="cambiarArea()">   
-                        <div class="md-list-item-text" layout="column">
-                            <h4>U.C.I.N. (C. y D.)</h4>
-                            <md-progress-linear md-mode="determinate"  value="50"></md-progress-linear>
-                        </div>
-                    </md-list-item>
-                    <md-list-item class="md-2-line" ng-click="cambiarArea()">   
-                        <div class="md-list-item-text" layout="column">
-                            <h4>Infectología (6/12)</h4>
-                            <md-progress-linear md-mode="determinate" value="50"></md-progress-linear>
-                        </div>
-
-                    </md-list-item>
-                    <md-list-item class="md-2-line" ng-click="cambiarArea()">
-                        <div class="md-list-item-text" layout="column">
-                            <h4>Medicina interna (6/12)</h4>
-                            <md-progress-linear md-mode="determinate"  value="50"></md-progress-linear>
-                        </div>
-                    </md-list-item>
-                    <md-list-item class="md-2-line" ng-click="cambiarArea()">   
-                        <div class="md-list-item-text" layout="column">
-                            <h4>Oncología (6/12)</h4>
-                            <md-progress-linear md-mode="determinate"  value="50"></md-progress-linear>
-                        </div>
-                    </md-list-item>
-                    <md-list-item class="md-2-line" ng-click="cambiarArea()">   
-                        <div class="md-list-item-text" layout="column">
-                            <h4>Cirugía (6/12)</h4>
-                            <md-progress-linear md-mode="determinate" value="50"></md-progress-linear>
-                        </div>
-                    </md-list-item>
-                    <md-list-item class="md-2-line" ng-click="cambiarArea()">   
-                        <div class="md-list-item-text" layout="column">
-                            <h4>Quemados (6/12)</h4>
-                            <md-progress-linear md-mode="determinate"  value="50"></md-progress-linear>
-                        </div>
-                    </md-list-item>
-                    <md-list-item class="md-2-line" ng-click="cambiarArea()">   
-                        <div class="md-list-item-text" layout="column">
-                            <h4>Quimio Ambulatoria (6/12)</h4>
-                            <md-progress-linear md-mode="determinate" value="50"></md-progress-linear>
-                        </div>
-                    </md-list-item>
-
-                </md-list>
+                 </md-list>
             </md-sidenav> 
             <!-- -->
         
