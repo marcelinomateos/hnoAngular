@@ -1,8 +1,20 @@
-angular.module('StarterApp', ['ngMaterial'])
+angular.module('StarterApp', ['ngMaterial','ngRoute'])
 
 .config(function($mdThemingProvider) {
     $mdThemingProvider.theme('default')
     .primaryPalette('amber');
+    
+    $mdThemingProvider.theme('azul')
+    .primaryPalette('blue');
+    
+    $mdThemingProvider.theme('cafe')
+    .primaryPalette('brown');
+    
+    $mdThemingProvider.theme('verde')
+    .primaryPalette('green');
+    
+    $mdThemingProvider.theme('rojo')
+    .primaryPalette('red');
     
 })
 

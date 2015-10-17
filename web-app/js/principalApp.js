@@ -1,8 +1,24 @@
 angular.module('StarterApp')
-//.controller('principalCtrl',function($scope){
-.controller('principalCtrl1', ['$scope',function($scope){
-  $scope.cambiarArea = function(area) {
-    console.log(area);
+.config(function($routeProvider){
+    $routeProvider
+    .when("/", {
+        controller: "principalCtrl",
+        controllerAs: "principalCtrl",
+        templateUrl: "principal/index"
+    })
+    .when("/ocupacion/", {
+        controller: "principalCtrl",
+        controllerAs: "principalCtrl",
+        templateUrl: "principal/ocupacion"
+    });
+})
+
+
+.controller('principalCtrl', ['$scope', '$location','$routeParams',function($scope, $location){
+        
+$scope.cambiarArea = function(areaRoute,area) {
+    $location.path(areaRoute);
+    $scope.area = area;
 };
 $scope.areaNoCensables = [
     {area:'Urgencias',ocupadas:10,camas:12,areaId:1},
@@ -20,6 +36,13 @@ $scope.areaCensables = [
     {area:'Quemados',ocupadas:0,camas:2,areaId:10},
     {area:'Quimio. Ambula.',ocupadas:1,camas:10,areaId:11}
 ];
+
+$scope.itemsMenu = [
+    {item:1,imagen:'manosChildrens.jpg',descripcion:'Pacientes',alt:'pacientes'},
+    {item:2,imagen:'hnoUrgencias.jpg',descripcion:'Urgencias',alt:'urgencias'},
+    {item:3,imagen:'consultaChildren.jpg',descripcion:'Consulta',alt:'consulta'},
+    {item:4,imagen:'farmacia.jpg',descripcion:'Farmacia',alt:'farmacia'}
+]
   
  
 }]);
