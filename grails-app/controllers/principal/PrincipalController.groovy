@@ -8,6 +8,9 @@ class PrincipalController {
     def ocupacion() {
         //
     }
+    def movimientos() {
+        //
+    }
     def iconos() {
         //
     }
